@@ -1,0 +1,22 @@
+Number of people: 4
+------------------------------
+garcia, asiel
+February 19, 2001
+Phone (work) 2093230203
+Email (home) asi@usc.edu
+------------------------------
+Louis-Dreyfus, Julia Scarlett Elizabeth
+January 13, 1961
+Phone () 3102917482
+Email () (Gmail) something@email.com
+------------------------------
+Van Nostrand, Martin
+July 24, 1949
+Phone () 2244325809
+Email () (Yahoo) myemail@yahoo.com
+------------------------------
+Burbank, Truman
+January 17, 1962
+Phone () 2135179989
+Email () (Official) document@info.edu
+------------------------------
