@@ -1,10 +1,6 @@
-#include <sstream>
-#include <filesystem>
 #include "network.h"
-#include <limits>
 #include "misc.h"
-#include <fstream>
-#include <string>
+
 Network::Network(){
     head = NULL;
     tail = NULL;
@@ -231,7 +227,7 @@ void Network::showMenu(){
             // TODO: print all the files in this same directory that have "networkDB.txt" format
             // print format: one filename one line.
             // This step just shows all the available .txt file to load.
-            DIR* dir = opendir(".");
+/*            DIR* dir = opendir(".");
             if (dir) {
                 struct dirent* entry;
                 while ((entry = readdir(dir)) != nullptr) {
@@ -254,6 +250,8 @@ void Network::showMenu(){
                 loadDB(fileName);
                 cout << "Network loaded from " << fileName << " with " << count << " people \n";
             }
+*/
+	cout<<"not implemented yet"<<endl;
         }
         else if (opt == 3){
             // TODO: Complete me!
@@ -294,14 +292,15 @@ void Network::showMenu(){
             // if not found: cout << "Person not found! \n";
             cout << "Print people with last name \n";
             cout << "Last name: ";
-            cin<<lname;
-
-
-
-
-            if (!found) {
-                cout << "Last name not found! \n";
-            }
+            cin>>lname;
+	    
+	    Person* temp = head;
+	    while(temp!=NULL){
+		if(temp->l_name == lname){
+		    temp->print_person();
+		}
+		temp = temp->next;
+	    }
         }
         
         else
