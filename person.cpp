@@ -89,10 +89,10 @@ void Person::set_person(string filename){
     birthdate = new Date(temp);
     std::getline(infile,type1, ' ');
     std::getline(infile, p);
-    phone = new Phone(type1, p);
+    email = new Email(type1, p);
     std::getline(infile,type2, ' ');
     std::getline(infile,e);
-    email = new Email(type2, e);
+    phone = new Phone(type2, e);
 
     infile.close();
 }

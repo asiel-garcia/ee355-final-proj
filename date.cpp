@@ -17,18 +17,20 @@ Date::Date(int day, int month, int year){
 }
 
 void Date::set_date(string str){
-    size_t first = str.find('/');
-    size_t second = str.find('/');
+    month = atoi(str.substr(0, str.find('/')).c_str());
 
-    month = atoi(str.substr(0,first).c_str());
-    day = atoi(str.substr(first+1,second).c_str());
-    year = atoi(str.substr(second+1).c_str());
+    str = str.substr(str.find('/')+1).c_str();
+    day = atoi(str.substr(0, str.find('/')).c_str());
+
+    str = str.substr(str.find('/')+1).c_str();
+    year = atoi(str.c_str());
+
 }
 
 void Date::set_date(int day, int month, int year){
-    this->month=month;
-    this->day=day;
-    this->year=year;
+    this->month = month; 
+    this->day = day;
+    this->year = year;
 }
 
 bool Date::operator==(const Date& rhs){

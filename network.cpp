@@ -13,16 +13,21 @@ void Network::loadDB(string filename){
     ifstream file(filename.c_str());
     string line;
 
+    string f_name, l_name, email, phone, birthday;
+
     while (getline(file, line)) {
-        string f_name, l_name, email, phone, birthday;
-	char delim;
-        getline(file, f_name);
+    	//char delim;
+        //getline(file, f_name);
+	f_name=line;
+	//cout<<f_name;
         getline(file, l_name);
         getline(file, birthday);
         getline(file, email);
         getline(file, phone);
         Person* p = new Person(f_name, l_name, birthday, email, phone);
+	p->print_person();
         push_back(p);
+	getline(file,line);
     }
 }
 Network::Network(string fileName){
@@ -54,6 +59,7 @@ Person* Network::search(Person* searchEntry){
 	if(*curr == *searchEntry){
 	    return curr;
 	}
+    curr=curr->next;
     }
     return NULL;
 }
@@ -84,13 +90,15 @@ void Network::saveDB(string filename){
     if(file.is_open()){
 	streambuf* coutbuf = cout.rdbuf();
 	cout.rdbuf(file.rdbuf());
-
+	/*
         Person* curr = head;
         while(curr != NULL){
             curr->print_person();
 	    cout<<endl;
             curr = curr->next;
         }
+	*/
+	printDB();
 	cout.rdbuf(coutbuf);
         file.close();
     }
