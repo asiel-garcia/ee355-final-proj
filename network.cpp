@@ -203,6 +203,7 @@ void Network::showMenu(){
         cout << "3. Add a new person \n";
         cout << "4. Remove a person \n";
         cout << "5. Print people with last name  \n";
+	cout << "6. Connect \n";
         cout << "\nSelect an option ... ";
         
         if (cin >> opt) {
@@ -308,6 +309,33 @@ void Network::showMenu(){
 		temp = temp->next;
 	    }
         }
+        else if (opt == 6){
+            cout<<"Make friends: \n";
+            cout<<"Person 1 \n";
+            cout<< "First Name: ";
+            getline(cin,fname);
+            cout<< "Last Name: ";
+            getline(cin,lname);
+            Person* p1 = search(fname,lname);
+	    if(p1 == NULL)
+               cout<<"Person not Found" ;
+            else{
+               cout<<"\nPerson 2 \n";
+               cout<< "First Name: ";
+               getline(cin,fname);
+               cout<< "Last Name: ";
+               getline(cin,lname);
+               Person* p2 = search(fname,lname);
+               if(p2 == NULL)
+                  cout<<"Person not Found";
+               else{
+		p1->makeFriend(p2);
+		p2->makeFriend(p1);
+		cout<<"\nFriendship Made!\n";
+               }            
+            }
+        }
+            
         
         else
             cout << "Nothing matched!\n";

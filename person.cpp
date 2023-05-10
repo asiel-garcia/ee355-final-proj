@@ -119,4 +119,28 @@ void Person::print_person(){
 	birthdate->print_date("Month D, YYYY");
     phone->print();
     email->print();
+    for(int i = 0; i < myfriends.size(); i++){
+	   cout<< codeName(myfriends[i]->f_name,myfriends[i]->l_name)<<endl;
+	}
+}
+
+void Person::makeFriend(Person* newFriend){
+    myfriends.push_back(newFriend);
+}
+
+string Person::codeName(string s1, string s2){
+   string codeName = s1 + s2;
+   int i = 0;
+   while(i < codeName.length()){
+      if(codeName[i] == ' '){
+        codeName.erase(i,1);
+      }
+      else if( (codeName[i] >= 65)
+            && (codeName[i] <= 90) ){
+         codeName[i] += 32;     
+         i++;
+     }
+     else i++;       
+   }
+   return codeName;
 }
