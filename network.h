@@ -8,6 +8,8 @@
 #include <stdlib.h>
 #include <fstream>
 #include <limits>
+#include <dirent.h>
+#include <cstring>
 class Network{
 
     private:

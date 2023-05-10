@@ -227,11 +227,11 @@ void Network::showMenu(){
             // TODO: print all the files in this same directory that have "networkDB.txt" format
             // print format: one filename one line.
             // This step just shows all the available .txt file to load.
-/*            DIR* dir = opendir(".");
+            DIR* dir = opendir(".");
             if (dir) {
                 struct dirent* entry;
-                while ((entry = readdir(dir)) != nullptr) {
-                    if (entry->d_type == DT_REG && std::strstr(entry->d_name, ".txt") != nullptr) {
+                while ((entry = readdir(dir)) != NULL) {
+                    if (entry->d_type == DT_REG && strstr(entry->d_name, ".txt") != NULL) {
                         std::cout << entry->d_name << std::endl;
                     }
                 }
@@ -240,7 +240,7 @@ void Network::showMenu(){
             cout << "Enter the name of the load file: "; 
             // If file with name FILENAME does not exist: 
             cin >> fileName;
-            ifstream file(fileName);
+            ifstream file(fileName.c_str());
             if (!file) {
                 cout << "File "<<fileName<<" does not exist!" << endl;;
             }
@@ -250,9 +250,7 @@ void Network::showMenu(){
                 loadDB(fileName);
                 cout << "Network loaded from " << fileName << " with " << count << " people \n";
             }
-*/
-	cout<<"not implemented yet"<<endl;
-        }
+         }
         else if (opt == 3){
             // TODO: Complete me!
             // TODO: use push_front, and not push_back 
