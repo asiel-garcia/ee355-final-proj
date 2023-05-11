@@ -22,8 +22,18 @@ Person::Person(string f_name, string l_name, string b_date, string email, string
     this->f_name = f_name;
     this->l_name = l_name;
     birthdate = new Date(b_date);
-    this->email = new Email("",email);
-    this->phone = new Phone("",phone);
+    size_t opening = email.find("(");
+    size_t closing = email.find(")");
+    string temp, e, temp2, p;
+    temp=email.substr(opening+1,closing-opening-1);
+    e=email.substr(closing+2);
+    this->email = new Email(temp,e);
+
+    size_t opening1 = phone.find("(");
+    size_t closing2 = phone.find(")");
+    temp2=phone.substr(opening1+1,closing2-opening1-1);
+    p=phone.substr(closing2+2);
+    this->phone = new Phone(temp2, p);
 }
 
 
