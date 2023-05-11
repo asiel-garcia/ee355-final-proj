@@ -15,7 +15,7 @@ void Network::loadDB(string filename){
 
     string f_name, l_name, email, phone, birthday;
 
-    while (getline(file, line)) {
+    while(getline(file, line)){
     	//char delim;
         //getline(file, f_name);
 	f_name=line;
@@ -204,6 +204,7 @@ void Network::showMenu(){
         cout << "4. Remove a person \n";
         cout << "5. Print people with last name  \n";
 	cout << "6. Connect \n";
+	cout << "7. Exit \n";
         cout << "\nSelect an option ... ";
         
         if (cin >> opt) {
@@ -309,7 +310,7 @@ void Network::showMenu(){
 		temp = temp->next;
 	    }
         }
-        else if (opt == 6){
+        else if(opt == 6){
             cout<<"Make friends: \n";
             cout<<"Person 1 \n";
             cout<< "First Name: ";
@@ -335,6 +336,9 @@ void Network::showMenu(){
                }            
             }
         }
+	else if(opt==7){
+	    break;
+	}
             
         
         else
